@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Signup.module.css";
 
-function Signup() {
+function Signup({changeToLogIn}) {
   return (
     <div className={styles.signupCard}>
      
@@ -136,7 +136,7 @@ function Signup() {
 
         <div className={styles.loginFooter}>
           Already have an account?{" "}
-          <a href="#login" className={styles.loginLink}>
+          <a href="#login" className={styles.loginLink} onClick={changeToLogIn}>
             Log In
           </a>
         </div>
