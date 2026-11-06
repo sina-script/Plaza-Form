@@ -1,4 +1,3 @@
-/* کارت اصلی بدون هیچ‌گونه پس‌زمینه پشتی یا حاشیه خارجی */
 .loginCard {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -11,11 +10,16 @@
   position: relative;
   border: 1px solid #e2e8f0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   margin: 0;
 }
 
-/* پنل سمت چپ هیرو */
 .heroSection {
   position: relative;
   background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #4338ca 100%);
@@ -195,41 +199,6 @@
   color: #1d4ed8;
 }
 
-.rowBetween {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 12px;
-  margin-top: 2px;
-}
-
-.checkboxLabel {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #475569;
-  cursor: pointer;
-}
-
-.checkbox {
-  width: 15px;
-  height: 15px;
-  border-radius: 4px;
-  border: 1px solid #cbd5e1;
-  accent-color: #2563eb;
-  cursor: pointer;
-}
-
-.forgotLink {
-  color: #2563eb;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.forgotLink:hover {
-  text-decoration: underline;
-}
-
 .primaryBtn {
   width: 100%;
   padding: 13px;
@@ -260,7 +229,7 @@
 
 .divider::before,
 .divider::after {
-  content: '';
+  content: "";
   flex: 1;
   border-bottom: 1px solid #e2e8f0;
 }
