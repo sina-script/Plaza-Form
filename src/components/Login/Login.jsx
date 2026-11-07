@@ -2,6 +2,21 @@ import React from 'react';
 import styles from './Login.module.css';
 
 function Login({changeToSignUp,loginUsername,setLoginUsername,loginPassword,setLoginPassword}) {
+
+  const loginValidate=()=>{
+    if(loginUsername.length<8)
+    {
+      alert("Your username length is shorter than 8 characters!")
+    }
+    else if(loginPassword.length<8)
+    {
+      alert("Your username length is shorter than 8 characters!")
+    }
+    else{
+       alert("You have successfully logged in.")
+    }
+  }
+
   return (
     <div className={styles.loginCard}>
       
@@ -77,7 +92,7 @@ function Login({changeToSignUp,loginUsername,setLoginUsername,loginPassword,setL
 
 
 
-          <button type="button" className={styles.primaryBtn}>
+          <button type="button" className={styles.primaryBtn} onClick={loginValidate}>
             Log In
           </button>
 
