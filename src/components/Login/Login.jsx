@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Login.module.css';
 
-export default function Login() {
+function Login({changeToSignUp,loginUsername,setLoginUsername,loginPassword,setLoginPassword}) {
   return (
     <div className={styles.loginCard}>
       
@@ -47,6 +47,10 @@ export default function Login() {
                 type="text" 
                 placeholder="Enter your username" 
                 className={styles.inputField} 
+                value={loginUsername}
+                onChange={(event)=>{
+                  setLoginUsername(event.target.value)
+                }}
               />
             </div>
           </div>
@@ -63,6 +67,10 @@ export default function Login() {
                 type="password" 
                 placeholder="Enter your password" 
                 className={`${styles.inputField} ${styles.passwordField}`} 
+                value={loginPassword}
+                onChange={(event)=>{
+                  setLoginPassword(event.target.value)
+                }}
               />
             </div>
           </div>
@@ -76,10 +84,14 @@ export default function Login() {
         </div>
 
         <div className={styles.signupFooter}>
-          Don't have an account? <a href="#signup" className={styles.signupLink}>Sign Up</a>
+          Don't have an account? <a href="#signup" className={styles.signupLink} onClick={changeToSignUp}>Sign Up</a>
         </div>
       </div>
 
     </div>
   );
 }
+
+
+
+export default Login;
