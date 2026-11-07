@@ -31,6 +31,10 @@ function Signup({
     }
     else{
       alert("You have successfully signed up.")
+      setSignupUsername("")
+      setSignupPassword("")
+      setSignupPhoneNumber("")
+      setSignupEmail("")
     }
   }
 

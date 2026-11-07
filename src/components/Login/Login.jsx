@@ -10,10 +10,12 @@ function Login({changeToSignUp,loginUsername,setLoginUsername,loginPassword,setL
     }
     else if(loginPassword.length<8)
     {
-      alert("Your username length is shorter than 8 characters!")
+      alert("Your password length is shorter than 8 characters!")
     }
     else{
        alert("You have successfully logged in.")
+       setLoginUsername("")
+       setLoginPassword("")
     }
   }
 
