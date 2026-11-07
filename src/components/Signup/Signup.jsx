@@ -1,10 +1,41 @@
 import React from "react";
 import styles from "./Signup.module.css";
 
-function Signup({changeToLogIn}) {
+function Signup({
+  changeToLogIn,
+  signupUsername,
+  setSignupUsername,
+  signupPassword,
+  setSignupPassword,
+  signupEmail,
+  setSignupEmail,
+  signupPhoneNumber,
+  setSignupPhoneNumber,
+}) {
+
+
+
+  
+  const signupValidate=()=>{
+    if(signupUsername.length<8)
+    {
+      alert("Your username length is shorter than 8 characters!")
+    }
+    else if(signupPassword.length<8)
+    {
+      alert("Your password length is shorter than 8 characters!")
+    }
+    else if(signupEmail.length<10)
+    {
+      alert("Your email length is shorter than 8 characters!")
+    }
+    else{
+      alert("You have successfully signed up.")
+    }
+  }
+
   return (
     <div className={styles.signupCard}>
-     
       <div className={styles.formSection}>
         <div className={styles.formHeader}>
           <h2 className={styles.title}>Create Account</h2>
@@ -14,7 +45,6 @@ function Signup({changeToLogIn}) {
         </div>
 
         <div className={styles.formFields}>
-   
           <div className={styles.inputGroup}>
             <label className={styles.label}>Username</label>
             <div className={styles.inputWrapper}>
@@ -36,14 +66,17 @@ function Signup({changeToLogIn}) {
               </span>
               <input
                 type="text"
-                placeholder="Choose a username"
+                placeholder="Create a username"
                 className={styles.inputField}
+                value={signupUsername}
+                onChange={(event) => {
+                  setSignupUsername(event.target.value);
+                }}
               />
             </div>
           </div>
 
-
-                    <div className={styles.inputGroup}>
+          <div className={styles.inputGroup}>
             <label className={styles.label}>Password</label>
             <div className={styles.inputWrapper}>
               <span className={styles.inputIcon}>
@@ -66,11 +99,14 @@ function Signup({changeToLogIn}) {
                 type="password"
                 placeholder="Create a strong password"
                 className={`${styles.inputField} ${styles.passwordField}`}
+                value={signupPassword}
+                onChange={(event) => {
+                  setSignupPassword(event.target.value);
+                }}
               />
             </div>
           </div>
 
-       
           <div className={styles.inputGroup}>
             <label className={styles.label}>Email</label>
             <div className={styles.inputWrapper}>
@@ -94,11 +130,14 @@ function Signup({changeToLogIn}) {
                 type="email"
                 placeholder="Enter your email"
                 className={styles.inputField}
+                value={signupEmail}
+                onChange={(event) => {
+                  setSignupEmail(event.target.value);
+                }}
               />
             </div>
           </div>
 
-        
           <div className={styles.inputGroup}>
             <label className={styles.label}>Phone Number</label>
             <div className={styles.inputWrapper}>
@@ -122,12 +161,13 @@ function Signup({changeToLogIn}) {
                 type="tel"
                 placeholder="Enter your phone number"
                 className={styles.inputField}
+                value={signupPhoneNumber}
+                onChange={(event) => {
+                  setSignupPhoneNumber(event.target.value);
+                }}
               />
             </div>
           </div>
-
-      
-
 
           <button type="button" className={styles.primaryBtn}>
             Sign Up
@@ -142,7 +182,6 @@ function Signup({changeToLogIn}) {
         </div>
       </div>
 
- 
       <div className={styles.heroSection}>
         <div className={styles.orbOne}></div>
         <div className={styles.orbTwo}></div>
